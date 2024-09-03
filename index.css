@@ -1,0 +1,167 @@
+body {
+  margin: 100px 100px;
+  background-color: #333;
+}
+
+main {
+  display: flex;
+  gap: 4rem;
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  border-left: 0.5px solid #888;
+  border-bottom: 0.5px solid #888;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  z-index: 10;
+}
+.container::after {
+  width: 0.5px;
+  height: 140%;
+  background-color: rgba(200, 200, 200, 0.45);
+  content: "";
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: 9;
+}
+
+.dot {
+  transform: translate(-50%, 50%);
+  animation: moveLeft 2.5s infinite ease-in;
+  z-index: 11;
+}
+.dot::after {
+  z-index: 11;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  content: "";
+  animation: moveUp 2.5s infinite ease-out;
+}
+
+@keyframes moveLeft {
+  50% {
+    animation-timing-function: ease-in;
+    transform: translateX(100px);
+  }
+}
+@keyframes moveUp {
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(-100px);
+  }
+}
+
+.dot-spring {
+  transform: translate(-50%, 50%);
+  animation: moveLeftSpring 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+  z-index: 11;
+}
+.dot-spring::after {
+  z-index: 11;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  content: "";
+  animation: moveUpSpring 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+}
+
+@keyframes moveLeftSpring {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateX(100px);
+  }
+}
+@keyframes moveUpSpring {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateY(-100px);
+  }
+}
+
+.dot-spring-2 {
+  transform: translate(-50%, 50%);
+  animation: moveLeftSpring2 2.5s infinite cubic-bezier(0.84, 0.02, 0.08, 0.87);
+  z-index: 11;
+}
+.dot-spring-2::after {
+  z-index: 11;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  content: "";
+  animation: moveUpSpring2 2.5s infinite cubic-bezier(0, 0.78, 0.99, 0.08);
+}
+
+@keyframes moveLeftSpring2 {
+  50% {
+    animation-timing-function: cubic-bezier(0.84, 0.02, 0.08, 0.87);
+    transform: translateX(100px);
+  }
+}
+@keyframes moveUpSpring2 {
+  50% {
+    animation-timing-function: cubic-bezier(0, 0.78, 0.99, 0.08);
+    transform: translateY(-100px);
+  }
+}
+
+.dot-spring-3 {
+  transform: translate(-50%, 50%);
+  animation: moveLeftSpring3 2.5s infinite cubic-bezier(0, 0.6, 0.46, 0.44);
+  z-index: 11;
+}
+.dot-spring-3::after {
+  z-index: 11;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  content: "";
+  animation: moveUpSpring3 2.5s infinite cubic-bezier(0.72, 0.72, 1, 0.55);
+}
+
+@keyframes moveLeftSpring3 {
+  50% {
+    animation-timing-function: cubic-bezier(0, 0.6, 0.46, 0.44);
+    transform: translateX(100px);
+  }
+}
+@keyframes moveUpSpring3 {
+  50% {
+    animation-timing-function: cubic-bezier(0.72, 0.72, 1, 0.55);
+    transform: translateY(-100px);
+  }
+}
